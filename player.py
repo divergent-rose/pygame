@@ -34,7 +34,7 @@ class Player(CircleShape):
         if keys[pygame.K_s]:
             self.move(-dt)
         if keys[pygame.K_SPACE]:
-            return self.shoot()
+            self.shoot()
     
     def move(self, dt):
         unit_vector = pygame.Vector2(0, 1)
