@@ -18,14 +18,16 @@ def main():
     
 
     while True:
+        dt = clock.tick(60) / 1000  # Limit to 60 FPS and get delta time
         log_state() #log state 
         for event in pygame.event.get(): #this will cycle through pygame events
             if event.type == pygame.QUIT:
                 return
+        player.update(dt)
         screen.fill("black") #backround in black
         player.draw(screen)
         pygame.display.flip() #screen refresh 
-        dt = clock.tick(60) / 1000  # Limit to 60 FPS and get delta time
+        
 
 if __name__ == "__main__":
     main()
