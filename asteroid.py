@@ -9,7 +9,7 @@ class Asteroid(CircleShape):
         super().__init__(x, y, radius)
 
     def draw(self, screen):
-        pygame.draw.circle(screen, "white", self.position, self.radius, constants.LINE_WIDTH)
+        pygame.draw.circle(screen, "purple", self.position, self.radius, constants.LINE_WIDTH)
 
     def update(self, dt):
         self.position += self.velocity * dt
@@ -29,5 +29,5 @@ class Asteroid(CircleShape):
             angle = random.uniform(20,50)
             asteroid1.velocity = self.velocity.rotate(angle) *1.2
             asteroid2.velocity = self.velocity.rotate(-angle) *1.2
-            
+
             return [asteroid1, asteroid2]
